@@ -1,0 +1,29 @@
+<?php include 'views/templates/header.phtml'; ?>
+
+<h1>Editar Producto</h1>
+
+<form action="<?= BASE_URL ?>/productos/edit/<?= $producto['id_producto'] ?>" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($producto['nombre_producto']) ?>" required>
+    
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad" value="<?= $producto['cantidad_producto'] ?>" required>
+    
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" value="<?= htmlspecialchars($producto['color_producto']) ?>" required>
+    
+    <label for="id_almacen">Almacén:</label>
+    <select id="id_almacen" name="id_almacen" required>
+        <?php foreach ($almacenes as $almacen): ?>
+            <option value="<?= $almacen['ID_almacen'] ?>" <?= ($almacen['ID_almacen'] == $producto['id_almacen']) ? 'selected' : '' ?>>
+                <?= htmlspecialchars($almacen['nombre_almacen']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+    
+    <button type="submit">Actualizar Producto</button>
+</form>
+
+<a href="<?= BASE_URL ?>/productos">Volver a la lista</a>
+
+<?php include 'views/templates/footer.phtml'; ?>

@@ -1,9 +1,9 @@
 <?php include 'views/templates/header.phtml'; ?>
 
-<h1>Lista de Almacenes</h1>
+<h1>Lista de Productos</h1>
 
 <?php if (isset($_SESSION['user_id'])): ?>
-    <a href="<?= BASE_URL ?>/almacenes/add" class="btn">Agregar Almacén</a>
+    <a href="<?= BASE_URL ?>/productos/add" class="btn">Agregar Producto</a>
 <?php endif; ?>
 
 <table>
@@ -11,23 +11,25 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Lugar</th>
-            <th>Capacidad</th>
+            <th>Cantidad</th>
+            <th>Color</th>
+            <th>Almacén</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($almacenes as $almacen): ?>
+        <?php foreach ($productos as $producto): ?>
             <tr>
-                <td><?= $almacen['ID_almacen'] ?></td>
-                <td><?= htmlspecialchars($almacen['nombre_almacen']) ?></td>
-                <td><?= htmlspecialchars($almacen['lugar_almacen']) ?></td>
-                <td><?= $almacen['capacidad_almacen'] ?></td>
+                <td><?= $producto['id_producto'] ?></td>
+                <td><?= htmlspecialchars($producto['nombre_producto']) ?></td>
+                <td><?= $producto['cantidad_producto'] ?></td>
+                <td><?= htmlspecialchars($producto['color_producto']) ?></td>
+                <td><?= htmlspecialchars($producto['nombre_almacen']) ?></td>
                 <td>
-                    <a href="<?= BASE_URL ?>/almacenes/detail/<?= $almacen['ID_almacen'] ?>">Ver</a>
+                    <a href="<?= BASE_URL ?>/productos/detail/<?= $producto['id_producto'] ?>">Ver</a>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="<?= BASE_URL ?>/almacenes/edit/<?= $almacen['ID_almacen'] ?>">Editar</a>
-                        <a href="<?= BASE_URL ?>/almacenes/delete/<?= $almacen['ID_almacen'] ?>" onclick="return confirm('¿Está seguro de eliminar este almacén?')">Eliminar</a>
+                        <a href="<?= BASE_URL ?>/productos/edit/<?= $producto['id_producto'] ?>">Editar</a>
+                        <a href="<?= BASE_URL ?>/productos/delete/<?= $producto['id_producto'] ?>" onclick="return confirm('¿Está seguro de eliminar este producto?')">Eliminar</a>
                     <?php endif; ?>
                 </td>
             </tr>

@@ -1,23 +1,24 @@
 <?php include 'views/templates/header.phtml'; ?>
 
-<h1>Detalle del Almacén</h1>
+<h1>Detalle del Producto</h1>
 
 <dl>
     <dt>ID:</dt>
-    <dd><?= $almacen['ID_almacen'] ?></dd>
+    <dd><?= $producto['id_producto'] ?></dd>
     
     <dt>Nombre:</dt>
-    <dd><?= htmlspecialchars($almacen['nombre_almacen']) ?></dd>
+    <dd><?= htmlspecialchars($producto['nombre_producto']) ?></dd>
     
-    <dt>Lugar:</dt>
-    <dd><?= htmlspecialchars($almacen['lugar_almacen']) ?></dd>
+    <dt>Cantidad:</dt>
+    <dd><?= $producto['cantidad_producto'] ?></dd>
     
-    <dt>Capacidad:</dt>
-    <dd><?= $almacen['capacidad_almacen'] ?></dd>
+    <dt>Color:</dt>
+    <dd><?= htmlspecialchars($producto['color_producto']) ?></dd>
+    
+    <dt>Almacén:</dt>
+    <dd><?= htmlspecialchars($producto['nombre_almacen']) ?></dd>
 </dl>
 
-<a href="<?= BASE_URL ?>/productos/byAlmacen/<?= $almacen['ID_almacen'] ?>">Ver productos en este almacén</a>
-
-<a href="<?= BASE_URL ?>/almacenes">Volver a la lista</a>
+<a href="<?= BASE_URL ?>/productos">Volver a la lista</a>
 
 <?php include 'views/templates/footer.phtml'; ?>
