@@ -1,0 +1,38 @@
+<?php include 'views/templates/header.phtml'; ?>
+
+<h1>Lista de Almacenes</h1>
+
+<?php if (isset($_SESSION['user_id'])): ?>
+    <a href="<?= BASE_URL ?>/almacenes/add" class="btn">Agregar Almacén</a>
+<?php endif; ?>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Lugar</th>
+            <th>Capacidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($almacenes as $almacen): ?>
+            <tr>
+                <td><?= $almacen['ID_almacen'] ?></td>
+                <td><?= htmlspecialchars($almacen['nombre_almacen']) ?></td>
+                <td><?= htmlspecialchars($almacen['lugar_almacen']) ?></td>
+                <td><?= $almacen['capacidad_almacen'] ?></td>
+                <td>
+                    <a href="<?= BASE_URL ?>/almacenes/detail/<?= $almacen['ID_almacen'] ?>">Ver</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="<?= BASE_URL ?>/almacenes/edit/<?= $almacen['ID_almacen'] ?>">Editar</a>
+                        <a href="<?= BASE_URL ?>/almacenes/delete/<?= $almacen['ID_almacen'] ?>" onclick="return confirm('¿Está seguro de eliminar este almacén?')">Eliminar</a>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+<?php include 'views/templates/footer.phtml'; ?>
