@@ -1,0 +1,20 @@
+<?php include 'views/templates/header.phtml'; ?>
+
+<h1>Agregar Almacén</h1>
+
+<form action="<?= BASE_URL ?>/almacenes/add" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="lugar">Lugar:</label>
+    <input type="text" id="lugar" name="lugar" required>
+    
+    <label for="capacidad">Capacidad:</label>
+    <input type="number" id="capacidad" name="capacidad" required>
+    
+    <button type="submit">Agregar Almacén</button>
+</form>
+
+<a href="<?= BASE_URL ?>/almacenes">Volver a la lista</a>
+
+<?php include 'views/templates/footer.phtml'; ?>

@@ -1,0 +1,23 @@
+<?php include 'views/templates/header.phtml'; ?>
+
+<h1>Detalle del Almacén</h1>
+
+<dl>
+    <dt>ID:</dt>
+    <dd><?= $almacen['ID_almacen'] ?></dd>
+    
+    <dt>Nombre:</dt>
+    <dd><?= htmlspecialchars($almacen['nombre_almacen']) ?></dd>
+    
+    <dt>Lugar:</dt>
+    <dd><?= htmlspecialchars($almacen['lugar_almacen']) ?></dd>
+    
+    <dt>Capacidad:</dt>
+    <dd><?= $almacen['capacidad_almacen'] ?></dd>
+</dl>
+
+<a href="<?= BASE_URL ?>/productos/byAlmacen/<?= $almacen['ID_almacen'] ?>">Ver productos en este almacén</a>
+
+<a href="<?= BASE_URL ?>/almacenes">Volver a la lista</a>
+
+<?php include 'views/templates/footer.phtml'; ?>
