@@ -1,5 +1,14 @@
-<?php include 'views/templates/header.phtml'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
+    
+<?php include '../views/templates/header.phtml'; ?>
+<body>
 <h1>Agregar Almacén</h1>
 
 <form action="<?= BASE_URL ?>/almacenes/add" method="post">
@@ -17,4 +26,7 @@
 
 <a href="<?= BASE_URL ?>/almacenes">Volver a la lista</a>
 
-<?php include 'views/templates/footer.phtml'; ?>
+<?php include '../views/templates/footer.phtml'; ?>
+
+</body>
+</html>
