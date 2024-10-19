@@ -13,12 +13,12 @@ class ProductoController {
 
     public function index() {
         $productos = $this->model->getAllProductos();
-        require 'views/producto/list.phtml';
+        require '../views/producto/list.phtml';
     }
 
     public function detail($id) {
         $producto = $this->model->getProductoById($id);
-        require 'views/producto/detail.phtml';
+        require '../views/producto/detail.phtml';
     }
 
     public function add() {
@@ -34,7 +34,7 @@ class ProductoController {
                 $error = "Error al agregar el producto";
             }
         }
-        require 'views/producto/add.phtml';
+        require '../views/producto/add.phtml';
     }
 
     public function edit($id) {
@@ -51,7 +51,7 @@ class ProductoController {
                 $error = "Error al actualizar el producto";
             }
         }
-        require 'views/producto/edit.phtml';
+        require '../views/producto/edit.phtml';
     }
 
     public function delete($id) {
@@ -59,13 +59,13 @@ class ProductoController {
             header('Location: ' . BASE_URL . '/productos');
         } else {
             $error = "Error al eliminar el producto";
-            require 'views/error.phtml';
+            require '../views/error.phtml';
         }
     }
 
     public function byAlmacen($almacenId) {
         $productos = $this->model->getProductosByAlmacen($almacenId);
         $almacen = $this->almacenModel->getAlmacenById($almacenId);
-        require 'views/producto/listByAlmacen.phtml';
+        require '../views/producto/listByAlmacen.phtml';
     }
 }

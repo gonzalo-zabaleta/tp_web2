@@ -10,12 +10,12 @@ class AlmacenController {
 
     public function index() {
         $almacenes = $this->model->getAllAlmacenes();
-        require 'views/almacen/list.phtml';
+        require '../views/almacen/list.phtml';
     }
 
     public function detail($id) {
         $almacen = $this->model->getAlmacenById($id);
-        require 'views/almacen/detail.phtml';
+        require '../views/almacen/detail.phtml';
     }
 
     public function add() {
@@ -29,7 +29,7 @@ class AlmacenController {
                 $error = "Error al agregar el almacén";
             }
         }
-        require 'views/almacen/add.phtml';
+        require '../views/almacen/add.phtml';
     }
 
     public function edit($id) {
@@ -44,7 +44,7 @@ class AlmacenController {
                 $error = "Error al actualizar el almacén";
             }
         }
-        require 'views/almacen/edit.phtml';
+        require '../views/almacen/edit.phtml';
     }
 
     public function delete($id) {
@@ -52,7 +52,7 @@ class AlmacenController {
             header('Location: ' . BASE_URL . '/almacenes');
         } else {
             $error = "Error al eliminar el almacén";
-            require 'views/error.phtml';
+            require '../views/error.phtml';
         }
     }
 }
