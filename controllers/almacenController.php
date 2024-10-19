@@ -1,5 +1,5 @@
 <?php
-require_once 'models/almacenModel.php';
+require_once '../models/almacenModel.php';
 
 class AlmacenController {
     private $model;

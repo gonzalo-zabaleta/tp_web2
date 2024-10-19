@@ -1,6 +1,6 @@
 <?php
-require_once 'models/productoModel.php';
-require_once 'models/almacenModel.php';
+require_once '../models/productoModel.php';
+require_once '../models/almacenModel.php';
 
 class ProductoController {
     private $model;
