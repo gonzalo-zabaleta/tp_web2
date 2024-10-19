@@ -4,7 +4,7 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'tp_web2');
 
-define('BASE_URL', 'http://localhost/your-project-folder');
+define('BASE_URL', 'http://localhost/tp_web2');
 
 // Función para conectar a la base de datos
 function getDBConnection() {
