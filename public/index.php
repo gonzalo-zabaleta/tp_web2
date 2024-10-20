@@ -5,7 +5,7 @@ require_once '../config/config.php';
 require_once '../libs/Router.php';
 require_once '../controllers/almacenController.php';
 require_once '../controllers/productoController.php';
-//require_once '../controllers/authController.php';
+require_once '../controllers/authController.php';
 
 $router = new Router();
 
@@ -25,8 +25,8 @@ $router->addRoute('producto/delete/{id}', 'ProductoController', 'delete');
 $router->addRoute('producto/listByAlmacen/{id}', 'ProductoController', 'listByAlmacen');
 
 // Auth routes
-//$router->addRoute('auth/login', 'AuthController', 'login');
-//$router->addRoute('auth/logout', 'AuthController', 'logout');
+$router->addRoute('auth/login', 'AuthController', 'login');
+$router->addRoute('auth/logout', 'AuthController', 'logout');
 
 // Get the current URL
 $url = $_GET['url'] ?? '';
